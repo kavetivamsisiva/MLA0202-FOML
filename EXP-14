@@ -1,0 +1,9 @@
+# EXP 14: HOUSE PRICE PREDICTION
+
+area = [800,1000,1200,1500]
+price = [40,50,65,80]
+
+def predict(a):
+    return 0.05*a
+
+print("Predicted House Price:", predict(1100),"Lakhs")
