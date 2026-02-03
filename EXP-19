@@ -1,0 +1,15 @@
+# EXP 19: BANK LOAN PREDICTION
+
+data = [
+    ('High','Yes'),
+    ('Low','No'),
+    ('Medium','Yes'),
+    ('Low','No')
+]
+
+def loan(income):
+    yes = sum(1 for d in data if d[0]==income and d[1]=='Yes')
+    no = sum(1 for d in data if d[0]==income and d[1]=='No')
+    return "Approved" if yes>=no else "Rejected"
+
+print("Loan Status:", loan('Medium'))
