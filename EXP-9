@@ -1,0 +1,11 @@
+# EXPERIMENT 9: SIMPLE & MULTIPLE LR
+
+import numpy as np
+
+X=np.array([1,2,3,4])
+y=np.array([2,4,6,8])
+
+m=np.sum((X-np.mean(X))*(y-np.mean(y)))/np.sum((X-np.mean(X))**2)
+c=np.mean(y)-m*np.mean(X)
+
+print("Simple LR:",m,c)
