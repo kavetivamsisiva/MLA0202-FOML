@@ -1,0 +1,19 @@
+# EXPERIMENT 7: LOGISTIC REGRESSION
+
+import math
+
+X=[0,1,2,3,4]
+y=[0,0,0,1,1]
+w=b=0
+lr=0.1
+
+def sigmoid(z): return 1/(1+math.exp(-z))
+
+for _ in range(1000):
+    for i in range(len(X)):
+        p=sigmoid(w*X[i]+b)
+        e=y[i]-p
+        w+=lr*e*X[i]
+        b+=lr*e
+
+print("Weight:",w,"Bias:",b)
