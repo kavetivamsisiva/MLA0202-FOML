@@ -1,0 +1,12 @@
+# EXP 13: CAR PRICE PREDICTION
+
+mileage = [10000,20000,30000,40000]
+price = [800000,700000,600000,500000]
+
+m = -10
+c = 900000
+
+def predict(mileage):
+    return m*mileage + c
+
+print("Predicted Price:", predict(25000))
