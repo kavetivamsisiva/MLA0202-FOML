@@ -1,0 +1,14 @@
+# EXP 11: CREDIT SCORE CLASSIFICATION
+
+data = [
+    [25, 30000, 'No'],
+    [40, 50000, 'Yes'],
+    [22, 20000, 'No'],
+    [35, 60000, 'Yes']
+]
+
+def classify(age, income):
+    return "Good Credit" if age > 30 and income > 40000 else "Bad Credit"
+
+for d in data:
+    print("Age:", d[0], "Income:", d[1], "=>", classify(d[0], d[1]))
