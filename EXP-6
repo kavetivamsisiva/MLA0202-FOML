@@ -1,0 +1,13 @@
+# EXPERIMENT 6: NAIVE BAYES
+
+from collections import Counter
+
+data = [('Sunny','Hot','No'),('Sunny','Cool','No'),
+        ('Overcast','Hot','Yes'),('Rain','Cool','Yes')]
+
+def classify(out,temp):
+    yes = sum(1 for d in data if d[0]==out and d[1]==temp and d[2]=='Yes')
+    no = sum(1 for d in data if d[0]==out and d[1]==temp and d[2]=='No')
+    return "Yes" if yes>=no else "No"
+
+print("Prediction:", classify('Sunny','Cool'))
