@@ -1,0 +1,37 @@
+# EXPERIMENT 3: ID3 ALGORITHM
+
+import math
+from collections import Counter
+
+data = [
+ ['Sunny','Hot','High','Weak','No'],
+ ['Sunny','Hot','High','Strong','No'],
+ ['Overcast','Hot','High','Weak','Yes'],
+ ['Rain','Mild','High','Weak','Yes'],
+ ['Rain','Cool','Normal','Weak','Yes'],
+ ['Rain','Cool','Normal','Strong','No'],
+ ['Overcast','Cool','Normal','Strong','Yes']
+]
+
+attributes = ['Outlook','Temperature','Humidity','Wind']
+
+def entropy(rows):
+    labels = [r[-1] for r in rows]
+    c = Counter(labels)
+    e = 0
+    for v in c.values():
+        p = v/len(rows)
+        e -= p * math.log2(p)
+    return e
+
+def info_gain(rows, col):
+    total = entropy(rows)
+    vals = set(r[col] for r in rows)
+    w_ent = 0
+    for v in vals:
+        sub = [r for r in rows if r[col]==v]
+        w_ent += (len(sub)/len(rows)) * entropy(sub)
+    return total - w_ent
+
+for i,a in enumerate(attributes):
+    print(a,":",round(info_gain(data,i),3))
