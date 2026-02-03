@@ -1,0 +1,21 @@
+# EXPERIMENT 4: BACKPROPAGATION
+
+import numpy as np
+
+X = np.array([[0,0],[0,1],[1,0],[1,1]])
+y = np.array([[0],[1],[1],[0]])
+
+np.random.seed(1)
+w = np.random.rand(2,1)
+lr = 0.1
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+for _ in range(10000):
+    out = sigmoid(np.dot(X,w))
+    err = y - out
+    w += lr * np.dot(X.T, err * out * (1-out))
+
+print("Weights:", w)
+print("Output:", sigmoid(np.dot(X,w)))
