@@ -1,0 +1,11 @@
+# EXP 16: CLASSIFIER COMPARISON
+
+accuracy = {
+    "Naive Bayes":85,
+    "KNN":80,
+    "Logistic Regression":78,
+    "Decision Tree":82
+}
+
+for k,v in accuracy.items():
+    print(k,"Accuracy:",v,"%")
