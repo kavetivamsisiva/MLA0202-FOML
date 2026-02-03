@@ -1,0 +1,16 @@
+# EXPERIMENT 5: KNN
+
+import math
+from collections import Counter
+
+data = [([2,4],'A'),([4,6],'A'),([4,4],'B'),([6,2],'B')]
+
+def dist(a,b):
+    return math.sqrt(sum((x-y)**2 for x,y in zip(a,b)))
+
+def knn(train,test,k):
+    d = [(dist(f,test),l) for f,l in train]
+    d.sort()
+    return Counter([l for _,l in d[:k]]).most_common(1)[0][0]
+
+print("Class:", knn(data,[3,5],3))
