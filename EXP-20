@@ -1,0 +1,8 @@
+# EXP 20: FUTURE SALES PREDICTION
+
+sales = [100,120,140,160]
+
+growth = (sales[-1]-sales[0])/(len(sales)-1)
+
+future = sales[-1] + growth
+print("Predicted Future Sales:", future)
