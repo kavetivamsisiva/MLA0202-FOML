@@ -1,0 +1,12 @@
+# EXPERIMENT 8: LINEAR REGRESSION
+
+X=[1,2,3,4,5]
+y=[2,4,6,8,10]
+
+xm=sum(X)/len(X)
+ym=sum(y)/len(y)
+
+m=sum((X[i]-xm)*(y[i]-ym) for i in range(len(X))) / sum((X[i]-xm)**2 for i in range(len(X)))
+c=ym-m*xm
+
+print("m:",m,"c:",c)
