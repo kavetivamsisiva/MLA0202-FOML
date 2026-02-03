@@ -1,0 +1,17 @@
+# EXP 15: NAIVE BAYES CLASSIFICATION
+
+from collections import Counter
+
+data = [
+    ('Yes','No','Yes'),
+    ('Yes','Yes','Yes'),
+    ('No','Yes','No'),
+    ('No','No','No')
+]
+
+def classify(x,y):
+    yes = sum(1 for d in data if d[0]==x and d[1]==y and d[2]=='Yes')
+    no = sum(1 for d in data if d[0]==x and d[1]==y and d[2]=='No')
+    return "Yes" if yes>=no else "No"
+
+print("Class:", classify('Yes','No'))
