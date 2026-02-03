@@ -1,0 +1,18 @@
+# EXP 18: PERCEPTRON CLASSIFIER
+
+X = [[1,1],[2,2],[3,3],[4,4]]
+y = [0,0,1,1]
+
+w = [0,0]
+b = 0
+lr = 0.1
+
+for _ in range(10):
+    for i in range(len(X)):
+        y_pred = w[0]*X[i][0] + w[1]*X[i][1] + b
+        if y[i] != (1 if y_pred>0 else 0):
+            w[0] += lr*X[i][0]
+            w[1] += lr*X[i][1]
+            b += lr
+
+print("Weights:",w,"Bias:",b)
