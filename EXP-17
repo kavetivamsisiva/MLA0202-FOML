@@ -1,0 +1,9 @@
+# EXP 17: MOBILE PRICE PREDICTION
+
+ram = 6
+storage = 128
+
+def price(r,s):
+    return r*3000 + s*50
+
+print("Predicted Mobile Price:", price(ram,storage))
