@@ -1,0 +1,16 @@
+# EXPERIMENT 10: EM ALGORITHM
+
+import numpy as np
+
+data=np.array([1,2,3,8,9,10])
+mu1,mu2=2,9
+pi=0.5
+
+for _ in range(10):
+    r1=pi*np.exp(-(data-mu1)**2)
+    r2=(1-pi)*np.exp(-(data-mu2)**2)
+    g=r1/(r1+r2)
+    mu1=np.sum(g*data)/np.sum(g)
+    mu2=np.sum((1-g)*data)/np.sum(1-g)
+
+print("Means:",mu1,mu2)
